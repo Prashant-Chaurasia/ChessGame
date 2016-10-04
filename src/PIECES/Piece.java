@@ -3,7 +3,7 @@ package PIECES;
 import ChessBoard.Board;
 import javax.swing.*;
 
-public abstract class Piece extends JButton implements Cloneable{
+public abstract class Piece extends JButton{
     Piece(){
 
 
