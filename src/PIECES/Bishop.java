@@ -1,4 +1,8 @@
 package PIECES;
 
-public class Bishop {
+public class Bishop extends Piece {
+
+    public Bishop(String path) {
+        super(path);
+    }
 }

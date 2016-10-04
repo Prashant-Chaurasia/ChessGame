@@ -1,4 +1,8 @@
 package PIECES;
 
-public class King {
+public class King extends Piece {
+
+    public King(String path) {
+        super(path);
+    }
 }

@@ -1,4 +1,9 @@
 package PIECES;
 
-public class Pawn {
+import javax.swing.*;
+
+public class Pawn extends Piece {
+    public Pawn(String path) {
+        super(path);
+    }
 }
