@@ -29,9 +29,7 @@ public class Board extends JFrame {
         GridLayout boardLayout = new GridLayout(8, 8);
         setLayout(boardLayout);
         setTitle("Chess Game");
-        //pane = new JPanel();
         setBounds(0, 0, 660, 660);
-        //pane.setSize(640,640);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         for (int i = 0; i < 8; i++) {
@@ -66,18 +64,10 @@ public class Board extends JFrame {
         int count = 0;
         while (count < 2) {
             for (int j = 0; j < 8; j++) {
-                if (i == 1) {//||i==6
-                    //ImageIcon image = createImageIcon("Photos//"+ch+"P.gif");
-                    //board[i][j].setIcon(image);
-                    p.pawn[j] = new Pawn("Photos//" + ch + "P.gif");//,board[i][j].getBackground());
-                    // this.getContentPane().remove(board[i][j]);
-
+                if (i == 1) {
+                    p.pawn[j] = new Pawn("Photos//" + ch + "P.gif");
                     board[i][j] = p.pawn[j];
                     board[i][j].setSize(new Dimension(80, 80));
-
-                    //System.out.println(i+"  "+j);
-                    //this.getContentPane().add(board[i][j]);
-                    //revalidate();
 
                 } else if (i == 6) {
                     p.pawn[j] = new Pawn("Photos//" + ch + "P.gif");
@@ -86,27 +76,24 @@ public class Board extends JFrame {
                 } else {
                     if (j == 0 || j == 7) {
                         p.rook[count] = new Rook("Photos//" + ch + "R.gif");
-                        board[i][j] = p.rook[count];// ImageIcon image = createImageIcon("Photos//"+ch+"R.gif");
+                        board[i][j] = p.rook[count];
                         board[i][j].setSize(new Dimension(80, 80));
                     } else if (j == 1 || j == 6) {
                         p.knight[count] = new Knight("Photos//" + ch + "N.gif");
                         board[i][j] = p.knight[count];
-                        //ImageIcon image = createImageIcon("Photos//"+ch+"N.gif");
                         board[i][j].setSize(new Dimension(80, 80));
                     } else if (j == 2 || j == 5) {
                         p.bishop[count] = new Bishop("Photos//" + ch + "B.gif");
                         board[i][j] = p.bishop[count];
-                        //ImageIcon image = createImageIcon("Photos//"+ch+"B.gif");
+
                         board[i][j].setSize(new Dimension(80, 80));
                     } else if (j == 3) {
                         p.king = new King("Photos//" + ch + "Q.gif");
                         board[i][j] = p.king;
-                        //ImageIcon image = createImageIcon("Photos//"+ch+"Q.gif");
                         board[i][j].setSize(new Dimension(80, 80));
                     } else if (j == 4) {
                         p.queen = new Queen("Photos//" + ch + "K.gif");
                         board[i][j] = p.queen;
-                        //ImageIcon image = createImageIcon("Photos//"+ch+"K.gif");
                         board[i][j].setSize(new Dimension(80, 80));
                     }
                 }
