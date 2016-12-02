@@ -140,7 +140,7 @@ public class Board extends JFrame {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
 
-           /* for (int row = 0; row < 8; row++) {
+            for (int row = 0; row < 8; row++) {
                 for (int col = 0; col < 8; col++) {
                     if (board[row][col] == (JButton)actionEvent.getSource()) {
                         if (pieceToMoveButton == null&&tempObject==null){
@@ -227,7 +227,7 @@ public class Board extends JFrame {
                         }
                     }
                 }
-            }*/
+            }
         }
     }
 
