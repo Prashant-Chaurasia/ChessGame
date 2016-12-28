@@ -197,23 +197,32 @@ public class Board extends JFrame {
                                 turn = tempObject.getColor()=="black"?0:1;
                                 //System.out.println(turn);
                             }
-                            //System.out.println(pieceToMoveButton);
                             break;
                         }
                         //if this button press is selecting where to move
                         else {
-                            //System.out.print("   Hello");
-                            //System.out.println(tempObject.validateMove(board,crrtRow,crrtCol,row,col)+ "   " + tempObject.getColor()+" ");
-                            if(tempObject.validateMove(crrtRow,crrtCol,row,col)&&turn == turn1){
-                                board[row][col] = tempObject;
-                                turn1++;
-                                turn1=turn1%2;
-                                getContentPane().removeAll();
-                                createBoard();
-                                pieceToMoveButton = null;    //makes the next button press a piece selection
-                                tempObject = null;
-                                crrtRow = -1;
-                                crrtCol = -1;
+                            if(turn==turn1) {
+
+                                if (tempObject.validateMove(crrtRow, crrtCol, row, col) && turn == turn1) {
+                                    board[row][col] = tempObject;
+                                    turn1++;
+                                    turn1 = turn1 % 2;
+                                    getContentPane().removeAll();
+                                    createBoard();
+                                    pieceToMoveButton = null;    //makes the next button press a piece selection
+                                    tempObject = null;
+                                    crrtRow = -1;
+                                    crrtCol = -1;
+                                }
+                                else{
+                                    board[crrtRow][crrtCol] = pieceToMoveButton;
+                                    getContentPane().removeAll();
+                                    createBoard();
+                                    pieceToMoveButton = null;    //makes the next button press a piece selection
+                                    tempObject = null;
+                                    crrtRow = -1;
+                                    crrtCol = -1;
+                                }
                             }
                             else{
                                 board[crrtRow][crrtCol] = pieceToMoveButton;
@@ -224,6 +233,7 @@ public class Board extends JFrame {
                                 crrtRow = -1;
                                 crrtCol = -1;
                             }
+
                         }
                     }
                 }
