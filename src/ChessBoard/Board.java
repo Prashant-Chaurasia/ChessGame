@@ -9,19 +9,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Board extends JFrame {
-    JButton pieceToMoveButton = null;//variable that persists between actionPerformed calls
-    String moveCheck = "black";
-    Piece tempObject ;
-    static int crrtRow = -1, crrtCol = -1;
-    private float sizeX = (float) 80.0, sizeY = (float) 80.0;
+    private JButton pieceToMoveButton = null;//variable that persists between actionPerformed calls
+    private Piece tempObject ;
+    private static int crrtRow = -1, crrtCol = -1;
     private Color boxColor = Color.BLACK;
     private JPanel pane;
     private JButton board[][] = new JButton[8][8];
-    GridLayout boardLayout = new GridLayout(8, 8);
-    Player black;
-    Player white;
-    int turn = 0 ;
-    int turn1 = 1;
+    private Player black;
+    private Player white;
+    private int turn = 0 ;
+    private int turn1 = 1;
 
     public Board(){
 

@@ -6,11 +6,11 @@ import javax.swing.*;
 public class Knight extends Piece {
 
 
-    public String image_Path ;
+    private String image_Path ;
     //    int loc_x, loc_y;
-    public String color;
-    public boolean ep_able;
-    public boolean hasMoved;
+    private String color;
+    private boolean ep_able;
+    private boolean hasMoved;
 
 
     public Knight(Player w, Player b, JButton board[][], String p, String pColor){

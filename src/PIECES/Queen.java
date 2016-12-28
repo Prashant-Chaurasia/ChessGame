@@ -4,11 +4,9 @@ import javax.swing.*;
 import GAME.*;
 public class Queen extends Piece{
 
-    public String image_Path ;
-    //    int loc_x, loc_y;
-    public String color;
-    Player white ,black;
-    JButton board[][];
+    private String image_Path ;
+    private String color;
+    private Player white ,black;
 
     public Queen(Player w,Player b,JButton board[][],String p, String pColor){
         super(w,b,board);

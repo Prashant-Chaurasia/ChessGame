@@ -5,11 +5,10 @@ import javax.swing.*;
 public class Pawn extends Piece{
 
 
-    public String image_Path ;
-    //    int loc_x, loc_y;
-    public String color;
-    public boolean ep_able;
-    public boolean hasMoved = false;
+    private String image_Path ;
+    private String color;
+    private boolean ep_able;//to be used for the enpassant move..
+    private boolean hasMoved = false;
 
 
     public Pawn(Player w,Player b,JButton board[][], String p, String pColor){

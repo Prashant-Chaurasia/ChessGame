@@ -1,8 +1,6 @@
 package GAME;
 
-import GAME.*;
 import ChessBoard.*;
-import PIECES.*;
 public class Game {
 
     public static void main(String[] args) {

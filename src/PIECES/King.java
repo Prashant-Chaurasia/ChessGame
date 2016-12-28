@@ -4,11 +4,9 @@ import javax.swing.*;
 import GAME.*;
 public class King extends Piece{
 
-    public String image_Path ;
-    //    int loc_x, loc_y;
-    public String color;
-    public boolean hasMoved;
-    public boolean castled;
+    private String image_Path ;
+    private String color;
+    private boolean castled;//to be used for castling....
 
 
     public King(Player w,Player b,JButton board[][],String p, String pColor){

@@ -1,17 +1,13 @@
 package PIECES;
 import GAME.*;
-import ChessBoard.*;
 import ChessBoard.Board;
 import javax.swing.*;
 
 public abstract class Piece extends JButton{
-    public String image_Path ;
-    //    int loc_x, loc_y;
-    public String color;
-    JButton board[][];
-    Board main_Board = new Board();
-    Player white;
-    Player black;
+    private String color;
+    private JButton board[][];
+    private Player white;
+    private Player black;
 
     Piece(Player w,Player b,JButton bd[][]){
         white = w;
