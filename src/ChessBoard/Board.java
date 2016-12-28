@@ -4,6 +4,8 @@ import GAME.*;
 import PIECES.*;
 
 import javax.swing.*;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,14 +21,19 @@ public class Board extends JFrame {
     private Player white;
     private int turn = 0 ;
     private int turn1 = 1;
-
-    public Board(){
-
-    }
-
+    private JMenuBar menuBar = new JMenuBar();
+    private JButton newGame = new JButton("New Game");//button to be used for starting a new game..
     public Board(Player b, Player w) {
         black = b;
         white = w;
+        setJMenuBar(menuBar);
+        newGame.setBackground(Color.WHITE);
+        newGame.setForeground(Color.BLUE);
+        newGame.setBorder(BorderFactory.createRaisedBevelBorder());
+        Menu_Listener menuListener = new Menu_Listener();
+        menuListener.setObject(this);
+        newGame.addActionListener(menuListener);
+        menuBar.add(newGame);
         setPieces('W', white);
         setPieces('B', black);
         createBoard();
@@ -35,11 +42,11 @@ public class Board extends JFrame {
     public void createBoard() {
 
         GridLayout boardLayout = new GridLayout(8, 8);
-        setLayout(boardLayout);
         setTitle("Chess Game");
-        //pane = new JPanel();
-        setBounds(360, 0, 660, 660);
-        //pane.setSize(640,640);
+        pane = new JPanel();
+        setBounds(340, 0, 700, 700);
+        pane.setSize(640,640);
+        pane.setLayout(boardLayout);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -48,17 +55,18 @@ public class Board extends JFrame {
                     board[i][j].setSize(new Dimension(80, 80));
                     board[i][j].addActionListener(new MoveListener());
                     board[i][j].setBackground(boxColor);
-                    this.getContentPane().add(board[i][j], boardLayout);
+                    pane.add(board[i][j], boardLayout);
                 } else {
                     board[i][j] = new JButton();
                     board[i][j].addActionListener(new MoveListener());
                     board[i][j].setSize(new Dimension(80, 80));
                     board[i][j].setBackground(boxColor);
-                    this.getContentPane().add(board[i][j], boardLayout);
+                    pane.add(board[i][j], boardLayout);
                     validate();
                 }
             }
         }
+        this.getContentPane().add(pane);
         setVisible(true);
     }
 
@@ -235,6 +243,25 @@ public class Board extends JFrame {
                     }
                 }
             }
+        }
+    }
+
+    class Menu_Listener implements ActionListener {
+        JFrame frame;
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            if ((JButton) actionEvent.getSource() == newGame) {
+                frame.setVisible(false);
+                Player p1 = new Player();
+                Player p2 = new Player();
+                Board board = new Board(p1, p2);
+
+            }
+        }
+
+        public void setObject(JFrame f) {
+            frame = f;
         }
     }
 
