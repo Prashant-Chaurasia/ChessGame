@@ -46,7 +46,7 @@ public class Rook extends Piece{
 
             int i = Math.abs(currentRow - newRow);
             int count;
-            if (color.equals("black")) {
+            if (currentRow>newRow) {
                 count = 1;
                 int cR = currentRow-1;
                 int cL = currentCol;
@@ -67,6 +67,7 @@ public class Rook extends Piece{
 
                 int cR = currentRow+1;
                 int cL = currentCol;
+                System.out.print(cR+"  "+cL);
                 count = 1;
                 while (count < i) {
                     if (isAtPosition(cR, cL)) {

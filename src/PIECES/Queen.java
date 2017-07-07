@@ -40,13 +40,11 @@ public class Queen extends Piece{
     }
 
     public boolean validBishopMove(int currentRow, int currentCol, int newRow, int newCol){
-        if(color.equals("black")){
             int cR;
             int cL;
-            if(currentRow == newRow || currentCol == newCol){
+            if(currentRow == newRow || currentCol == newCol)
                 //Did not move diagonally
                 return false;
-            }
 
             if(Math.abs(newRow - currentRow) != Math.abs(newCol - currentCol)){
                 return false;
@@ -103,18 +101,15 @@ public class Queen extends Piece{
             }
 
             if(isAtPosition(newRow,newCol)){
-                if(isEmpty(newRow,newCol).getColor().equals("black")){
+                if((isEmpty(newRow,newCol).getColor().equals("black")&&color.equals("black"))||
+                        (isEmpty(newRow,newCol).getColor().equals("white")&&color.equals("white"))){
                     return false;
                 }
             }
             return true;
 
-        }
-
-
-        return false;
-
     }
+
 
     public boolean validRookMove(int currentRow, int currentCol, int newRow, int newCol){
         if(currentRow != newRow && currentCol != newCol){
@@ -129,7 +124,7 @@ public class Queen extends Piece{
 
             int i = Math.abs(currentRow - newRow);
             int count;
-            if (color.equals("black")) {
+            if (currentRow>newRow) {
                 count = 1;
                 int cR = currentRow-1;
                 int cL = currentCol;
