@@ -10,3 +10,7 @@ A GUI based Chess game in Java to learn Object Oriented Programming Principles. 
 
 
 ![chessgame2](https://user-images.githubusercontent.com/19494189/27760803-be5f8af2-5e6d-11e7-83ee-3a68bf7da608.png)
+
+## Contributors
+* [Prashant Chaurasia](https://github.com/Prashant-Chaurasia/)
+* [Piyush Sikarwal](https://github.com/psikarwal/)
