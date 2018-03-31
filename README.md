@@ -13,4 +13,3 @@ A GUI based Chess game in Java to learn Object Oriented Programming Principles. 
 
 ## Contributors
 * [Prashant Chaurasia](https://github.com/Prashant-Chaurasia/)
-* [Piyush Sikarwal](https://github.com/psikarwal/)
